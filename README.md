@@ -1,2 +1,2 @@
 # Projet-badge-qr-1
-Projet HTML/CSS pour crée run badge interactif avec QR code et images
+Projet HTML/CSS pour créer une page web avec badge interactif, QR code et images.
