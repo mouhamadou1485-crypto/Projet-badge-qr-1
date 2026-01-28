@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouhamadou Coulibaly - Data Scientist</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-primary: #2d5016;
+            --green-accent: #4a7c2c;
+            --green-light: #e8f5e1;
+            --green-soft: #f4f9f1;
+            --cream: #fdfcfa;
+            --text-dark: #1a1a1a;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --border: #e0e0e0;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+       
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 6rem;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--green-accent);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--green-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 1px solid;
+        }
+
+        .btn-primary {
+            background: var(--green-primary);
+            color: var(--white);
+            border-color: var(--green-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--green-accent);
+            border-color: var(--green-accent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--green-primary);
+            border-color: var(--green-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--green-light);
+        }
+
+        .img-container {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .img-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: var(--green-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+
+        .img-placeholder-text {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 5rem;
+        }
+
+        .section-number {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--green-accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1.5rem;
+            color: var(--green-primary);
+        }
+
+        .section-description {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 5rem;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-gray);
+            line-height: 1.9;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--green-primary);
+            font-weight: 500;
+        }
+
+        .quote-block {
+            background: var(--green-light);
+            padding: 3rem;
+            border-left: 3px solid var(--green-primary);
+        }
+
+        .quote-text {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--green-primary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-author {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .schedule-wrapper {
+            max-width: 800px;
+            margin: 5rem 0;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border: 1px solid var(--border);
+        }
+
+        .schedule-table thead {
+            background: var(--green-soft);
+        }
+
+        .schedule-table th {
+            padding: 1.25rem 2rem;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--green-primary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .schedule-table td {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-gray);
+        }
+
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tbody tr:hover {
+            background: var(--green-soft);
+        }
+
+        .schedule-table td:first-child {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .media-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .media-visual {
+            width: 100%;
+            height: 400px;
+            background: var(--green-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .media-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-visual video {
+            width: 100%;
+            height: 100%;
+        }
+
+        .media-caption {
+            padding: 2rem;
+            color: var(--text-gray);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .interest-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .interest-item:hover {
+            border-color: var(--green-primary);
+            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.08);
+        }
+
+        .interest-item h3 {
+            color: var(--green-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .interest-item ul {
+            list-style: none;
+        }
+
+        .interest-item li {
+            padding: 0.5rem 0;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.25rem;
+        }
+
+        .interest-item li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--green-accent);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .contact-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .contact-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green-accent);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-value {
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        .contact-value a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--green-primary);
+        }
+
+        .ascii-section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            padding: 3rem;
+            margin: 5rem 0;
+            overflow-x: auto;
+        }
+
+        .ascii-art {
+            font-family: monospace;
+            font-size: 0.65rem;
+            color: var(--green-primary);
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0 2rem;
+            background: var(--white);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-text a {
+            color: var(--green-primary);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--green-primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-top:hover {
+            background: var(--green-accent);
+        }
+
+        @media (max-width: 968px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2rem; }
+            
+            nav .container {
+                padding: 1.5rem 2rem;
+            }
+            
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .container {
+                padding: 0 2rem;
+            }
+            
+            section {
+                padding: 5rem 0;
+            }
+            
+            .hero-layout,
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2.5rem; }
+            
+            nav ul {
+                display: none;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">MC</div>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#interets">Intérêts</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+            <div class="qr-code"> <img src="QR_Code.png" alt="qr" style="width: 75px; height: 75px; object-fit: cover; position: fixed  "> </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="hero">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <span class="hero-label">Élève Ingénieur</span>
+                    <h1>Mouhamadou Coulibaly</h1>
+                    <p class="hero-subtitle">Data Science & Ingénierie des Connaissances</p>
+                    <p class="hero-description">
+                        Passionné pour l'analyse et l'exploration des données, particulièrement dans le domaine 
+                        de la finance. Je combine expertise technique et curiosité pour transformer les données 
+                        en insights exploitables.
+                    </p>
+                    <div class="cta-group">
+                        <a href="#contact" class="btn btn-primary">Me contacter</a>
+                        <a href="#about" class="btn btn-secondary">En savoir plus</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="img-container">
+                        <div class="img-label">Ma photo</div>
+                        <div class="img-placeholder">
+                            <div class="img-placeholder-text">
+                                <img src="My_Picture.jpeg" alt="ma photo" style="width: 250px; height: 250px; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-number">01</div>
+                <h2>À propos de moi</h2>
+                <p class="section-description">
+                    Mon parcours, ma passion et mes inspirations
+                </p>
+            </div>
+            
+            <div class="about-layout">
+                <div class="about-text fade-in">
+                    <p>
+                        Je suis élève ingénieur en <strong>Data Science et Ingénierie des Connaissances</strong> 
+                        à l'École des Sciences de l'Information à Rabat. Mon intérêt pour la Data a commencé 
+                        en 2025, inspiré par un cousin statisticien travaillant dans une banque en France.
+                    </p>
+                    <p>
+                        Ma passion se situe à l'intersection de l'analyse de données et de la finance, 
+                        où je cherche constamment à découvrir des patterns et à générer des insights exploitables. 
+                        Au-delà de la technologie, j'apprécie les animés et le sport, qui m'apportent équilibre 
+                        et inspiration.
+                    </p>
+                    <p>
+                        Mon approche combine rigueur analytique et créativité, toujours guidée par la conviction 
+                        que le véritable échec est de ne pas essayer.
+                    </p>
+                </div>
+                <div class="quote-block fade-in">
+                    <p class="quote-text">
+                        Le seul véritable échec est de ne pas essayer.
+                    </p>
+                    <p class="quote-author">George Clooney</p>
+                </div>
+            </div>
+
+            <div class="schedule-wrapper fade-in">
+                <div class="section-header">
+                    <div class="section-number">02</div>
+                    <h2>Emploi du temps hebdomadaire</h2>
+                </div>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Jour</th>
+                            <th>Activité d'apprentissage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lundi</td>
+                            <td>Apprendre HTML</td>
+                        </tr>
+                        <tr>
+                            <td>Mardi</td>
+                            <td>Pratiquer CSS</td>
+                        </tr>
+                        <tr>
+                            <td>Mercredi</td>
+                            <td>Apprendre JavaScript</td>
+                        </tr>
+                        <tr>
+                            <td>Jeudi</td>
+                            <td>Pratiquer C</td>
+                        </tr>
+                        <tr>
+                            <td>Vendredi</td>
+                            <td>Apprendre Python</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="fade-in" style="margin-top: 5rem;">
+                <div class="section-header">
+                    <div class="section-number">03</div>
+                    <h2>Contenus multimédias</h2>
+                </div>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <div class="media-visual">
+                            <img src="Kira.jpg" alt="Antagoniste favori">
+                        </div>
+                        <div class="media-caption">
+                            Ceci est une image de l'un de mes antagonistes préférés!
+                        </div>
+                    </div>
+                    <div class="media-item">
+                        <div class="media-visual">
+                            <video controls>
+                                <source src="Vidéo_animé.mp4" type="video/mp4">
+                                Votre navigateur ne supporte pas la vidéo.
+                            </video>
+                        </div>
+                        <div class="media-caption">
+                            L'une de mes vidéos préférées!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hobbies">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-number">04</div>
+                <h2>Hobbies & Intérêts</h2>
+                <p class="section-description">
+                    Ce qui m'anime au quotidien
+                </p>
+            </div>
+
+            <div class="interests-grid">
+                <div class="interest-item fade-in">
+                    <h3>Hobbies</h3>
+                    <ul>
+                        <li>Apprendre le développement web</li>
+                        <li>Écouter de la musique</li>
+                        <li>Lire des livres</li>
+                        <li>Regarder des mangas</li>
+                        <li>Suivre l'actualité football</li>
+                        <li>Jouer au foot</li>
+                        <li>Écouter des nouvelles sur la Data</li>
+                    </ul>
+                </div>
+
+                <div class="interest-item fade-in">
+                    <h3>Tech & Data</h3>
+                    <ul>
+                        <li>Informatique & Data Science</li>
+                        <li>Analyse des données</li>
+                        <li>Statistiques et modélisation</li>
+                        <li>Data visualisation</li>
+                        <li>Cybersécurité</li>
+                        <li>Innovation technologique</li>
+                    </ul>
+                </div>
+
+                <div class="interest-item fade-in">
+                    <h3>Engagement</h3>
+                    <ul>
+                        <li>Vie associative</li>
+                        <li>Projets académiques</li>
+                        <li>Veille technologique</li>
+                        <li>Apprentissage continu</li>
+                        <li>Partage de connaissances</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-number">05</div>
+                <h2>Contact</h2>
+                <p class="section-description">
+                    N'hésitez pas à me contacter pour toute collaboration ou question
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-label">Téléphone</div>
+                    <div class="contact-value">
+                        <a href="tel:+212669253491">+212 669253491</a>
+                    </div>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:mouhamadou1485@email.com">mouhamadou1485@email.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-label">Adresse</div>
+                    <div class="contact-value">
+                        Cité Universitaire<br>Moulay Ismail, Rabat
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-grid" style="margin-top: 2rem;">
+                <div class="contact-item fade-in" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto; width: 100%;">
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">
+                        <a href="https://www.linkedin.com/in/mouhamadou-coulibaly-06a8b934b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Connectez-vous avec moi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ascii-section fade-in">
+                <pre class="ascii-art">
+    __ __ _ _              
+| \/ | ___ _ _| |__ __ _ _ __ ___ __ _ __| | ___ _ _ | 
+|\/| |/ _ \| | | | '_ \ / _` | '_ ` _ \ / _` |/ _` |/ _ \| | | | | 
+| | | (_) | |_| | | | | (_| | | | | | | (_| | (_| | (_) | |_| | 
+|_|__|_|\___/ \__,_|_|_|_|\__,_|_|_|_| |_|\__,_|\__,_|\___/ \__,_| 
+/ ___|___ _ _| (_) |__ __ _| |_ _                          
+| | / _ \| | | | | | '_ \ / _` | | | | |                         
+| |__| (_) | |_| | | | |_) | (_| | | |_| |                         
+\____\___/ \__,_|_|_|_.__/ \__,_|_|\__, |                         
+                                    |___/
+                </pre>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>Copyright 2026 — Mouhamadou Coulibaly</p>
+                <p>Contact : <a href="mailto:mouhamadou1485@email.com">mouhamadou1485@email.com</a></p>
+            </div>
+            <div class="footer-note">
+                Cette page a été créée dans le cadre d'un projet académique en utilisant HTML5 et CSS3 
+                afin de démontrer les compétences en développement web et design d'interface.
+            </div>
+        </div>
+    </footer>
+
+    <a href="#accueil" class="back-top" id="backTop">↑</a>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const backTop = document.getElementById('backTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backTop.classList.add('visible');
+            } else {
+                backTop.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
